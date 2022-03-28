@@ -14,6 +14,7 @@ import jempasam.mathank.engine.item.ItemGroup;
 import jempasam.mathank.engine.item.NegativeItem;
 import jempasam.mathank.engine.physic.GravityPAction;
 import jempasam.mathank.engine.physic.PhysicAction;
+import jempasam.mathank.engine.physic.PhysicManager;
 import jempasam.mathank.ihm.drawing.DrawableItem;
 import jempasam.mathank.ihm.drawing.DrawableItemList;
 import jempasam.mathank.ihm.paint.PaintBucket;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         // PlayerMap
         Item player=new ElipseItem(new MutableBox2d(500,0,100,100));
 
+        //Physic
+        PhysicManager physicmanager=new PhysicManager(map);
+        physicmanager.register(player,new GravityPAction(10),null);
+
         // Display
         Map<Item,PaintBucket> colors=new HashMap<>();
         colors.put(map, new RandomPaintBucket(List.of(PaintBucket.colour(0x00ff00),PaintBucket.colour(0x00aa00))));
@@ -58,13 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         mapview.setImageDrawable(new DrawableItemList(colors, List.of(map,player), new MutableVector2d(2000,1000), 200));
 
-        PhysicAction playerphysic=new GravityPAction(10);
-
         Handler looper=new Handler(getMainLooper());
         looper.postDelayed(new Runnable() {
             @Override
             public void run() {
-                playerphysic.simulate(player,map);
+                physicmanager.run();
                 mapview.invalidate();
 
                 looper.postDelayed(this,100);
