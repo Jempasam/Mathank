@@ -1,4 +1,4 @@
-package com.example.mathank;
+package jempasam.mathank;
 
 import android.os.Bundle;
 
@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.mathank.databinding.ActivityMainBinding;
+import jempasam.mathank.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;

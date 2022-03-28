@@ -1,4 +1,4 @@
-package com.example.mathank;
+package jempasam.mathank;
 
 import org.junit.Test;
 
