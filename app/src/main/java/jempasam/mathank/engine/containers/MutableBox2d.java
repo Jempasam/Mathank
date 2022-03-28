@@ -1,5 +1,7 @@
 package jempasam.mathank.engine.containers;
 
+import android.graphics.Rect;
+
 public class MutableBox2d implements Box2d{
 
     private Vector2d position;

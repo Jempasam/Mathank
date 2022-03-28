@@ -14,8 +14,8 @@ public class ItemGroup extends BaseItem implements  Iterable<Item>{
 
     private List<Item> items;
 
-    public ItemGroup(Vector2d position,Vector2d size) {
-        super(new MutableBox2d(position,size));
+    public ItemGroup(Box2d box) {
+        super(box);
         items=new ArrayList<>();
     }
 
@@ -38,7 +38,7 @@ public class ItemGroup extends BaseItem implements  Iterable<Item>{
     @Override
     public boolean doCollide(Vector2d point){
         for(Item it: items){
-            if(it.getBox().containPoint(point) && it.doCollide(point))return true;
+            if(/*it.getBox().containPoint(point) && */it.doCollide(point))return true;
         }
         return false;
     }

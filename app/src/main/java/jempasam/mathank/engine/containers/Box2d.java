@@ -24,6 +24,6 @@ public interface Box2d{
     default boolean containPoint(Vector2d point){
         Vector2d posLT=cornerLT();
         Vector2d posRB=cornerRB();
-        return posLT.getX()<point.getX() && point.getX()<posRB.getX() && posLT.getY()<point.getY() && point.getY()<posRB.getY();
+        return posLT.getX()<=point.getX() && point.getX()<posRB.getX() && posLT.getY()<=point.getY() && point.getY()<posRB.getY();
     }
 }

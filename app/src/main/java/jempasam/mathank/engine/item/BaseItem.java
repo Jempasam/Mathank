@@ -7,10 +7,10 @@ import jempasam.mathank.engine.containers.Vector2d;
 
 public abstract class BaseItem implements Item{
 
-    protected MutableBox2d box;
+    protected Box2d box;
 
     protected  BaseItem(Box2d box){
-        this.box=new MutableBox2d(box);
+        this.box=box;
     }
 
     @Override
