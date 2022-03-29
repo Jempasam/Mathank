@@ -3,7 +3,7 @@ package jempasam.mathank.ihm.paint;
 import android.graphics.Paint;
 
 public interface PaintBucket {
-    Paint getPaint(int x, int y, int seed);
+    Paint getPaint(float x, float y, int seed);
     public static Paint colour(int color){
         Paint ret=new Paint();
         ret.setColor(color);

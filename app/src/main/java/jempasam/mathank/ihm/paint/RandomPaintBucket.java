@@ -15,7 +15,7 @@ public class RandomPaintBucket implements PaintBucket{
 
 
     @Override
-    public Paint getPaint(int x, int y, int seed) {
+    public Paint getPaint(float x, float y, int seed) {
         Random random=new Random();
         return paints.get(random.nextInt(paints.size()));
     }

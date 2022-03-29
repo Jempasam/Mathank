@@ -34,7 +34,8 @@ public class DrawableItemList extends Drawable {
     public DrawableItemList(Map<Item, PaintBucket> colors, List<Item> items, Vector2d view, int precision){
         Map<Item,Drawable> sprites=new HashMap<>();
         for(Item it : items){
-            Drawable d=new BitmapDrawable(DrawableUtils.toBipMap(new DrawableItem(it,precision,colors.get(it)), it.getSize().getX(), it.getSize().getY()));
+            int localprecision=Math.max(precision*it.getSize().getX()/view.getX(), precision*it.getSize().getY()/view.getY());
+            Drawable d=new BitmapDrawable(DrawableUtils.toBipMap(new DrawableItem(it,localprecision,colors.get(it)), it.getSize().getX(), it.getSize().getY()));
             sprites.put(it,d);
         }
         this.sprites = sprites;
@@ -70,5 +71,9 @@ public class DrawableItemList extends Drawable {
     @Override
     public int getOpacity() {
         return PixelFormat.OPAQUE;
+    }
+
+    public Vector2d getView() {
+        return view;
     }
 }

@@ -37,7 +37,7 @@ public class DrawableItem extends Drawable {
         for(int x=0; x<precision; x++){
             for(int y=0; y<precision; y++){
 
-                Paint p=paint.getPaint(x*100/precision,y*100/precision,paintseed);
+                Paint p=paint.getPaint(x*1f/precision,y*1f/precision,paintseed);
 
                 int xitem=item.getSize().getX()*x/precision+item.getPos().getX();
                 int yitem=item.getSize().getY()*y/precision+item.getPos().getY();

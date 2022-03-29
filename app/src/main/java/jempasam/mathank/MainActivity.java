@@ -2,6 +2,7 @@ package jempasam.mathank;
 
 import android.graphics.Bitmap;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,16 +16,21 @@ import jempasam.mathank.engine.item.NegativeItem;
 import jempasam.mathank.engine.physic.GravityPAction;
 import jempasam.mathank.engine.physic.PhysicAction;
 import jempasam.mathank.engine.physic.PhysicManager;
+import jempasam.mathank.engine.physic.SlideGravityPAction;
 import jempasam.mathank.ihm.drawing.DrawableItem;
 import jempasam.mathank.ihm.drawing.DrawableItemList;
+import jempasam.mathank.ihm.paint.BitmapPaintBucket;
 import jempasam.mathank.ihm.paint.PaintBucket;
 import jempasam.mathank.ihm.paint.RandomPaintBucket;
+import jempasam.mathank.ihm.view.ItemListView;
 
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,11 +42,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView mapview=(ImageView)findViewById(R.id.environnement);
-
         // Paints
-        PaintBucket paint=new RandomPaintBucket(List.of(PaintBucket.colour(0x00ff00),PaintBucket.colour(0x00aa00)));
-        PaintBucket playerpaint=new RandomPaintBucket(List.of(PaintBucket.colour(0x0000ff),PaintBucket.colour(0x0000aa)));
+        PaintBucket paint=new RandomPaintBucket(Arrays.asList(PaintBucket.colour(0x00ff00),PaintBucket.colour(0x00aa00)));
+        PaintBucket playerpaint=new RandomPaintBucket(Arrays.asList(PaintBucket.colour(0x0000ff),PaintBucket.colour(0x0000aa)));
 
         // Environnement World
         ItemGroup map=new ItemGroup(new MutableBox2d(0,0,2000,1000));
@@ -54,21 +58,23 @@ public class MainActivity extends AppCompatActivity {
 
         //Physic
         PhysicManager physicmanager=new PhysicManager(map);
-        physicmanager.register(player,new GravityPAction(10),null);
+        physicmanager.register(player,new SlideGravityPAction(5),null);
 
         // Display
         Map<Item,PaintBucket> colors=new HashMap<>();
-        colors.put(map, new RandomPaintBucket(List.of(PaintBucket.colour(0x00ff00),PaintBucket.colour(0x00aa00))));
-        colors.put(player, new RandomPaintBucket(List.of(PaintBucket.colour(0x0000ff),PaintBucket.colour(0x0000aa))));
+        colors.put(map, new BitmapPaintBucket(((BitmapDrawable)getDrawable(R.drawable.grass)).getBitmap()));
+        colors.put(player, new BitmapPaintBucket(((BitmapDrawable)getDrawable(R.drawable.metal)).getBitmap()));
 
-        mapview.setImageDrawable(new DrawableItemList(colors, List.of(map,player), new MutableVector2d(2000,1000), 200));
+        //mapview.setImageDrawable(new DrawableItemList(colors, Arrays.asList(map,player), new MutableVector2d(2000,1000), 200));
+        ItemListView v=new ItemListView(this,colors,Arrays.asList(map,player),new MutableVector2d(2000,1000),400);
+        ((FrameLayout)findViewById(R.id.displayframe)).addView(v);
 
         Handler looper=new Handler(getMainLooper());
         looper.postDelayed(new Runnable() {
             @Override
             public void run() {
                 physicmanager.run();
-                mapview.invalidate();
+                v.invalidate();
 
                 looper.postDelayed(this,100);
             }

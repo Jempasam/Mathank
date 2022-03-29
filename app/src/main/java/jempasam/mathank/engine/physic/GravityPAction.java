@@ -21,4 +21,11 @@ public class GravityPAction implements  PhysicAction{
         return true;
     }
 
+    public int getFallspeed() {
+        return fallspeed;
+    }
+
+    public void setFallspeed(int fallspeed) {
+        this.fallspeed = fallspeed;
+    }
 }
