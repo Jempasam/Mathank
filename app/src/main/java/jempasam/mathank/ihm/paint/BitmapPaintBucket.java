@@ -1,13 +1,8 @@
 package jempasam.mathank.ihm.paint;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Paint;
 
-import java.util.List;
-import java.util.Random;
-
-import jempasam.mathank.MainActivity;
 import jempasam.swj.objectmanager.loader.tags.Loadable;
 import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 

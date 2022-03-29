@@ -1,10 +1,11 @@
-package jempasam.mathank;
+package jempasam.mathank.ihm.activity;
 
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import jempasam.mathank.R;
 import jempasam.mathank.app.resources.MathankResources;
 import jempasam.mathank.engine.containers.MutableBox2d;
 import jempasam.mathank.engine.containers.MutableVector2d;

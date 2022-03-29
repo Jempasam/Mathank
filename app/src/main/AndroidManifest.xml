@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mathank">
         <activity
-            android:name="jempasam.mathank.MainMenu"
+            android:name="jempasam.mathank.ihm.activity.MainMenu"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Mathank.NoActionBar">
@@ -19,6 +19,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="jempasam.mathank.ihm.activity.HelpMenu"
+            android:exported="true"
+            android:label="@string/help"
+            android:theme="@style/Theme.Mathank.NoActionBar">
         </activity>
     </application>
 
