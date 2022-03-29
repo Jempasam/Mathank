@@ -21,9 +21,9 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
 	
 	/**
-     * Retourne une valeur du conteneur égale à celle passée en paramètre
-     * @param comp La valeur à comparer
-     * @return La valeur trouvée ou null si la valeur n'existe pas dans le conteneur
+     * Retourne une valeur du conteneur Ã©gale Ã  celle passÃ©e en paramÃ¨tre
+     * @param comp La valeur Ã  comparer
+     * @return La valeur trouvÃ©e ou null si la valeur n'existe pas dans le conteneur
      */
     public default T findEquals(T comp){
     	for(T c : this)if(comp.equals(c))return c;
@@ -31,9 +31,9 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Retourne une liste des valeurs du conteneur égales à celle passée en paramètre
-     * @param comp La valeur à comparer
-     * @return La liste des valeurs trouvées ou null si la valeur n'existe pas dans le conteneur
+     * Retourne une liste des valeurs du conteneur Ã©gales Ã  celle passÃ©e en paramÃ¨tre
+     * @param comp La valeur Ã  comparer
+     * @return La liste des valeurs trouvÃ©es ou null si la valeur n'existe pas dans le conteneur
      */
     public default List<T> findAllEquals(T comp){
     	List<T> ret=new ArrayList<>();
@@ -42,9 +42,9 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Trouve la première valeur qui correspondent aux conditions du prédicat
-     * @param predicate Le prédicat
-     * @return La première valeur trouvée
+     * Trouve la premiÃ¨re valeur qui correspondent aux conditions du prÃ©dicat
+     * @param predicate Le prÃ©dicat
+     * @return La premiÃ¨re valeur trouvÃ©e
      */
     public default T findFor(Predicate<T> predicate) {
     	for(T c : this)if(predicate.test(c))return c;
@@ -52,9 +52,9 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Trouve toutes les valeurs qui correspondent aux conditions du prédicat
-     * @param predicate Le prédicat
-     * @return Une liste des valeurs trouvées
+     * Trouve toutes les valeurs qui correspondent aux conditions du prÃ©dicat
+     * @param predicate Le prÃ©dicat
+     * @return Une liste des valeurs trouvÃ©es
      */
     public default List<T> findAllFor(Predicate<T> predicate) {
     	List<T> ret=new ArrayList<>();
@@ -63,7 +63,7 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Teste si une valeur du conteneur correspond aux conditions du prédicat
+     * Teste si une valeur du conteneur correspond aux conditions du prÃ©dicat
      * @param predicate
      * @return
      */
@@ -73,7 +73,7 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Teste si toutes les valeurs du conteneur correspond aux conditions du prédicat
+     * Teste si toutes les valeurs du conteneur correspond aux conditions du prÃ©dicat
      * @param predicate
      * @return
      */
@@ -83,7 +83,7 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
 	 /**
-     * Calcule la somme des retours de la fonction sur chaque élément
+     * Calcule la somme des retours de la fonction sur chaque Ã©lÃ©ment
      * @param func La fonction
      * @return La somme des retours
      */
@@ -94,9 +94,9 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Compte le nombre d'élément qui répondent aux conditions du prédicat
-     * @param pred Le prédicat
-     * @return Le nombre d'élément
+     * Compte le nombre d'Ã©lÃ©ment qui rÃ©pondent aux conditions du prÃ©dicat
+     * @param pred Le prÃ©dicat
+     * @return Le nombre d'Ã©lÃ©ment
      */
     default int count(Predicate<T> pred){
     	int sum=0;
@@ -105,8 +105,8 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Récupère le meilleur élément d'après un comparateur
-     * @param isbetter Le comparateur qui détermine si le premier élément passé en paramètre est meilleur que le deuxième
+     * RÃ©cupÃ¨re le meilleur Ã©lÃ©ment d'aprÃ¨s un comparateur
+     * @param isbetter Le comparateur qui dÃ©termine si le premier Ã©lÃ©ment passÃ© en paramÃ¨tre est meilleur que le deuxiÃ¨me
      * @return Le meilleur
      */
     default T getBetter(BiPredicate<T,T> isbetter){
@@ -119,7 +119,7 @@ public interface SizedIterable<T> extends Iterable<T>{
     
     /**
      * Test si un objet existe dans le conteneur
-     * @param obj L'objet à trouver
+     * @param obj L'objet Ã  trouver
      * @return true si l'objet existe dans le conteneur.
      */
     public default boolean contains(Object obj) {
@@ -129,7 +129,7 @@ public interface SizedIterable<T> extends Iterable<T>{
     
     /**
      * Test si un ensemble d'objet est inclus dans le conteneur
-     * @param obj L'ensemble qui doit être inclus
+     * @param obj L'ensemble qui doit Ãªtre inclus
      * @return true si l'ensemble est inclus
      */
     default boolean containsAll(ReadableContainer<?> c) {
@@ -140,9 +140,9 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * Test si un objet égal existe dans le conteneur
-     * @param obj L'objet à comparer
-     * @return true si un objet égal à l'objet passé en paramètre existe dans le tableau
+     * Test si un objet Ã©gal existe dans le conteneur
+     * @param obj L'objet Ã  comparer
+     * @return true si un objet Ã©gal Ã  l'objet passÃ© en paramÃ¨tre existe dans le tableau
      */
     public default boolean containsEquals(Object obj) {
 		for(T o : this)if(obj.equals(o))return true;
@@ -157,7 +157,7 @@ public interface SizedIterable<T> extends Iterable<T>{
     }
     
     /**
-     * @return un tableau contenant les mêmes objet de le conteneur
+     * @return un tableau contenant les mÃªmes objet de le conteneur
      */
     default Object[] toArray() {
     	Object[] ret=new Object[size()];

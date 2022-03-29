@@ -5,10 +5,7 @@ import jempasam.mathank.engine.containers.Vector2d;
 import jempasam.mathank.engine.item.Item;
 import jempasam.swj.objectmanager.loader.tags.Loadable;
 
-@Loadable
 public interface Box2d{
-
-    public static Class<?> defaultSubclass(){ return MutableBox2d.class; }
 
     Vector2d getPos();
     Vector2d getSize();

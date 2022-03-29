@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import jempasam.swj.container.iterator.ReadableContainerIterator;
 
 /**
- * Un conteneur générique iterable avec des index numériques
+ * Un conteneur gï¿½nï¿½rique iterable avec des index numï¿½riques
  * @author Samuel Demont
  *
  * @param <T>
@@ -20,23 +20,23 @@ public interface Container<T> extends ReadableContainer<T>{
     public void set(int position,T obj);
     
     /**
-     * Insert une valeur dans le conteneur à l'index indiqué en décalant les autres valeurs
-     * @param position Position ou insérer la valeur
-     * @param card Valeur à insérer
+     * Insert une valeur dans le conteneur ï¿½ l'index indiquï¿½ en dï¿½calant les autres valeurs
+     * @param position Position ou insï¿½rer la valeur
+     * @param card Valeur ï¿½ insï¿½rer
      */
     public void insert(int position,T obj);
     
     /**
-     * Supprime une valeur du conteneur à une position donnée
-     * @param position Position de la valeur à supprimer
+     * Supprime une valeur du conteneur ï¿½ une position donnï¿½e
+     * @param position Position de la valeur ï¿½ supprimer
      * @return
      */
     public T remove(int position);
     
     /**
-     * Supprime la valeur indiquée
-     * @param obj La valeur à supprimer
-     * @return true si une valeur a bien été supprimée
+     * Supprime la valeur indiquï¿½e
+     * @param obj La valeur ï¿½ supprimer
+     * @return true si une valeur a bien ï¿½tï¿½ supprimï¿½e
      */
     public default boolean remove(T obj) {
     	int index=indexOf(obj);
@@ -47,8 +47,8 @@ public interface Container<T> extends ReadableContainer<T>{
     
     /**
      * Supprime un ensemble de valeurs
-     * @param obj Le conteneur contenant les valeurs à supprimer
-     * @return Le nombre de valeurs supprimées
+     * @param obj Le conteneur contenant les valeurs ï¿½ supprimer
+     * @return Le nombre de valeurs supprimï¿½es
      */
     public default int removeAll(ReadableContainer<T> objs) {
     	int counter=0;
@@ -59,9 +59,9 @@ public interface Container<T> extends ReadableContainer<T>{
     }
     
     /**
-     * Supprime toutes les valeurs qui correspondent aux conditions du prédicat
-     * @param pred Le prédicat
-     * @return Le nombre de valeurs supprimées
+     * Supprime toutes les valeurs qui correspondent aux conditions du prï¿½dicat
+     * @param pred Le prï¿½dicat
+     * @return Le nombre de valeurs supprimï¿½es
      */
     public default int removeAllThat(Predicate<T> pred) {
     	int count=0;
@@ -74,8 +74,8 @@ public interface Container<T> extends ReadableContainer<T>{
     
     /**
      * Supprime toutes les valeurs du conteneur sauf celles contenus dans un autre conteneur
-     * @param obj Le conteneur contenant les valeurs à garder
-     * @return Le nombre de valeurs gardées
+     * @param obj Le conteneur contenant les valeurs ï¿½ garder
+     * @return Le nombre de valeurs gardï¿½es
      */
     public default int retainAll(ReadableContainer<T> objs) {
     	int counter=0;
@@ -88,7 +88,7 @@ public interface Container<T> extends ReadableContainer<T>{
     
     /**
      * Ajoute une valeur dans le conteneur
-     * @param obj La valeur à ajouter
+     * @param obj La valeur ï¿½ ajouter
      */
     public default void add(T obj) {
     	insert(size(), obj);
@@ -96,7 +96,7 @@ public interface Container<T> extends ReadableContainer<T>{
     
     /**
      * Ajoute plusieurs valeurs dans le conteneur
-     * @param obj Les valeurs à ajouter
+     * @param obj Les valeurs ï¿½ ajouter
      */
     public default void addAll(T ...obj) {
     	for(T o : obj) insert(size(), o);
@@ -104,8 +104,8 @@ public interface Container<T> extends ReadableContainer<T>{
     
     /**
      * Echange la position de deux valeurs
-     * @param pos1 La position d'une des valeurs à échanger
-     * @param pos2 La position de l'autres valeur à échanger
+     * @param pos1 La position d'une des valeurs ï¿½ ï¿½changer
+     * @param pos2 La position de l'autres valeur ï¿½ ï¿½changer
      */
     public default void swap(int pos1,int pos2) {
     	T a=get(pos1);
@@ -114,16 +114,16 @@ public interface Container<T> extends ReadableContainer<T>{
     }
     
     /**
-     * Effectue une opération sur toutes les valeurs du conteneur
-     * @param cons L'opération à effectuer
+     * Effectue une opï¿½ration sur toutes les valeurs du conteneur
+     * @param cons L'opï¿½ration ï¿½ effectuer
      */
     public default void compute(Consumer<T> cons) {
     	for(T c : this)cons.accept(c);
     }
     
     /**
-     * Supprime le dernier élément du conteneur
-     * @return l'élément supprimé
+     * Supprime le dernier ï¿½lï¿½ment du conteneur
+     * @return l'ï¿½lï¿½ment supprimï¿½
      */
     default T pop() {
     	if(size()>0)return remove(size()-1);
@@ -131,7 +131,7 @@ public interface Container<T> extends ReadableContainer<T>{
     }
     
     /**
-     * Mélange le conteneur
+     * Mï¿½lange le conteneur
      */
     default void shuffle() {
     	int size=size();

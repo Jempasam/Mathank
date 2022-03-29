@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/jempasam/swj/container/Container.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/jempasam/swj/container/ReadableContainer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/jempasam/swj/container/SizedIterable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/jempasam/swj/data/chunk/DataChunkTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/jempasam/swj/data/chunk/ObjectChunk.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/jempasam/swj/registry/Registry.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

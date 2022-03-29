@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Permet de lier des objets à  des identifiant
+ * Permet de lier des objets Ã  des identifiant
  * @author Samuel Demont
  *
  * @param <T>
@@ -20,7 +20,7 @@ public class Registry<T> {
 	}
 	
 	/**
-	 * Associe un objet à  un identifiant
+	 * Associe un objet Ã  un identifiant
 	 * @param identifiant
 	 * @param objet
 	 * @throws IdAlreadyUserException
@@ -48,7 +48,7 @@ public class Registry<T> {
 	}
 	
 	/**
-	 * Récupère un objet associé à un id
+	 * RÃ©cupÃ¨re un objet associÃ© Ã  un id
 	 * @param l'id
 	 * @return
 	 */
@@ -57,9 +57,9 @@ public class Registry<T> {
 	}
 	
 	/**
-	 * Récupère un objet associé à un id si il existe sinon renvoie une valeur par defaut
+	 * RÃ©cupÃ¨re un objet associÃ© Ã  un id si il existe sinon renvoie une valeur par defaut
 	 * @param id
-	 * @param dflt Valeur par défaut
+	 * @param dflt Valeur par dÃ©faut
 	 * @return
 	 */
 	public T getOrDefault(String id, T dflt) {
@@ -68,7 +68,7 @@ public class Registry<T> {
 	}
 	
 	/**
-	 * Récupère l'id assocé à  un objet
+	 * RÃ©cupÃ¨re l'id assocÃ© Ã  un objet
 	 * @param obj
 	 * @return
 	 */
@@ -77,9 +77,9 @@ public class Registry<T> {
 	}
 	
 	/**
-	 * Récupère l'id assocé à un objet si il existe sinon renvoie une valeur par defaut
+	 * RÃ©cupÃ¨re l'id assocÃ© Ã  un objet si il existe sinon renvoie une valeur par defaut
 	 * @param obj
-	 * @param dflt Valeur par défaut
+	 * @param dflt Valeur par dÃ©faut
 	 * @return
 	 */
 	public String getIdOrDefault(T obj, String dflt) {

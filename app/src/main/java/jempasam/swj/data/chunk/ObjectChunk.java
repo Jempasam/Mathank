@@ -107,7 +107,7 @@ public class ObjectChunk extends DataChunk implements Container<DataChunk>, Clon
 	 * 
 	 * @return number of value in the tree
 	 */
-	//TODO Tester cette méthode
+	//TODO Tester cette mÃ©thode
 	public int totalSize() {
 		int size=0;
 		for(DataChunk c : this) {

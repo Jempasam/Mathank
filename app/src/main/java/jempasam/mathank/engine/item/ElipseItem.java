@@ -12,6 +12,8 @@ public class ElipseItem extends BaseItem {
         super(box);
     }
 
+    private ElipseItem(){super(null);}
+
     @Override
     public boolean doCollide(Vector2d point) {
 

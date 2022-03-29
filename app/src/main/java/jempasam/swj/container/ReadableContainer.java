@@ -5,7 +5,7 @@ import java.util.Iterator;
 import jempasam.swj.container.iterator.ReadableContainerIterator;
 
 /**
- * Un conteneur générique immuable
+ * Un conteneur gÃ©nÃ©rique immuable
  * @author Samuel Demont
  *
  * @param <T>
@@ -14,29 +14,29 @@ public interface ReadableContainer<T> extends SizedIterable<T>{
 	
 	/**
 	 * @param position
-	 * @return la valeur à la position donnée
+	 * @return la valeur Ã  la position donnÃ©e
 	 */
 	public T get(int position);
     
     /**
-     * Récupère l'élément à la position indiquée mais en partant de la fin
+     * RÃ©cupÃ¨re l'Ã©lÃ©ment Ã  la position indiquÃ©e mais en partant de la fin
 	 * @param position
-	 * @return la valeur à la position donnée
+	 * @return la valeur Ã  la position donnÃ©e
 	 */
 	default T getFromEnd(int position) {
 		return get(size()-1-position);
 	}
     
     /**
-     * @return Une valeur aléatoire du conteneur
+     * @return Une valeur alÃ©atoire du conteneur
      */
     public default T getRandom() {
         return get((int)(Math.random()*size()));
     }
     
     /**
-     * Récupère la position d'une valeur dans le conteneur
-     * @param obj La valeur à trouver
+     * RÃ©cupÃ¨re la position d'une valeur dans le conteneur
+     * @param obj La valeur Ã  trouver
      * @return La position de la valeur ou -1 si la valeur n'existe pas dans le conteneur
      */
     public default int indexOf(Object obj) {
@@ -56,10 +56,10 @@ public interface ReadableContainer<T> extends SizedIterable<T>{
     }
     
     /**
-     * Remplie un conteneur avec les éléments avec les éléments d'index index_min à index_min+size .
-     * @param c Le conteneur à remplir
-     * @param index_min L'index du premier élément
-     * @param size Le nombre d'élément
+     * Remplie un conteneur avec les Ã©lÃ©ments avec les Ã©lÃ©ments d'index index_min Ã  index_min+size .
+     * @param c Le conteneur Ã  remplir
+     * @param index_min L'index du premier Ã©lÃ©ment
+     * @param size Le nombre d'Ã©lÃ©ment
      * @return Le conteneur rempli.
      */
     default Container<T> subContainer(Container<T> c, int index_min, int size){

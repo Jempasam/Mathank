@@ -5,13 +5,9 @@ import android.graphics.Rect;
 import jempasam.swj.objectmanager.loader.tags.Loadable;
 import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 
-@Loadable
 public class MutableBox2d implements Box2d{
 
-    @LoadableParameter
     private Vector2d position;
-
-    @LoadableParameter
     private Vector2d size;
 
     public MutableBox2d(int posx, int posy, int sizex, int sizey){
