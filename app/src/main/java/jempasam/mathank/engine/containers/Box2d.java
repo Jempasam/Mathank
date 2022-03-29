@@ -27,4 +27,8 @@ public interface Box2d{
         Vector2d posRB=cornerRB();
         return posLT.getX()<=point.getX() && point.getX()<posRB.getX() && posLT.getY()<=point.getY() && point.getY()<posRB.getY();
     }
+
+    default Vector2d center(){
+        return new MutableVector2d(getPos().getX()+getSize().getX()/2, getPos().getY()+getSize().getY()/2);
+    }
 }

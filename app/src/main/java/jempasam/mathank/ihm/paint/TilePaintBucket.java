@@ -3,6 +3,7 @@ package jempasam.mathank.ihm.paint;
 import android.graphics.Paint;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -10,25 +11,30 @@ import jempasam.swj.objectmanager.loader.tags.Loadable;
 import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 
 @Loadable
-public class RandomPaintBucket implements PaintBucket{
+public class TilePaintBucket implements PaintBucket{
 
     private List<Paint> paints;
 
-    public RandomPaintBucket(List<Paint> paints){
+    @LoadableParameter
+    private int squareNumber;
+
+    public TilePaintBucket(List<Paint> paints, int squareNumber){
         this.paints=paints;
+        this.squareNumber=squareNumber;
     }
 
 
     @Override
     public Paint getPaint(float x, float y, int seed) {
-        Random random=new Random();
-        return paints.get(random.nextInt(paints.size()));
+        squareNumber=4;
+        return paints.get(((int)(x*squareNumber)+(int)(y*squareNumber))%paints.size());
     }
 
     // Loadable
-    private RandomPaintBucket(){
+    private TilePaintBucket(){
         paints=new ArrayList<>();
-    };
+        System.out.println("[["+paints+"]]");
+    }
 
     @LoadableParameter
     private void color(Paint p){
