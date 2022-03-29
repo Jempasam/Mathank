@@ -70,14 +70,13 @@ public class MainActivity extends AppCompatActivity {
         ((FrameLayout)findViewById(R.id.displayframe)).addView(v);
 
         Handler looper=new Handler(getMainLooper());
-        looper.postDelayed(new Runnable() {
+        looper.post(new Runnable() {
             @Override
             public void run() {
                 physicmanager.run();
                 v.invalidate();
-
                 looper.postDelayed(this,100);
             }
-        },100);
+        });
     }
 }

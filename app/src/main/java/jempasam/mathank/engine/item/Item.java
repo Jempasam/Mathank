@@ -3,6 +3,7 @@ package jempasam.mathank.engine.item;
 import jempasam.mathank.engine.containers.Box2d;
 import jempasam.mathank.engine.containers.Vector2d;
 
+
 public interface Item {
 
     Vector2d getPos();

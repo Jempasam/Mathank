@@ -3,7 +3,9 @@ package jempasam.mathank.engine.containers;
 import jempasam.mathank.engine.containers.MutableVector2d;
 import jempasam.mathank.engine.containers.Vector2d;
 import jempasam.mathank.engine.item.Item;
+import jempasam.swj.objectmanager.loader.tags.Loadable;
 
+@Loadable
 public interface Box2d{
 
     Vector2d getPos();
