@@ -4,9 +4,11 @@ import jempasam.mathank.engine.containers.Box2d;
 import jempasam.mathank.engine.containers.MutableBox2d;
 import jempasam.mathank.engine.containers.MutableVector2d;
 import jempasam.mathank.engine.containers.Vector2d;
+import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 
 public abstract class BaseItem implements Item{
 
+    @LoadableParameter
     protected Box2d box;
 
     protected  BaseItem(Box2d box){

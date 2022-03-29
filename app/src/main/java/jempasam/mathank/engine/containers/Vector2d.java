@@ -1,6 +1,9 @@
 package jempasam.mathank.engine.containers;
 
 public interface Vector2d {
+
+    public static Class<?> defaultSubclass(){ return Vector2d.class; }
+
     int getX();
     int getY();
     void setX(int x);

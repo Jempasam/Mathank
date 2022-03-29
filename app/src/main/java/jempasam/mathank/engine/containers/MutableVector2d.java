@@ -1,7 +1,15 @@
 package jempasam.mathank.engine.containers;
 
+import jempasam.swj.objectmanager.loader.tags.Loadable;
+import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
+
+@Loadable
 public class MutableVector2d implements Vector2d {
+
+    @LoadableParameter
     public int x=0;
+
+    @LoadableParameter
     public int y=0;
 
     public MutableVector2d(int x, int y) {

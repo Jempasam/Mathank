@@ -8,6 +8,8 @@ import jempasam.swj.objectmanager.loader.tags.Loadable;
 @Loadable
 public interface Box2d{
 
+    public static Class<?> defaultSubclass(){ return MutableBox2d.class; }
+
     Vector2d getPos();
     Vector2d getSize();
     void setPos(Vector2d v);

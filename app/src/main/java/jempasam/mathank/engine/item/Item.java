@@ -6,6 +6,8 @@ import jempasam.mathank.engine.containers.Vector2d;
 
 public interface Item {
 
+    public static Class<?> defaultSubclass(){ return ItemGroup.class; }
+
     Vector2d getPos();
     void setPos(Vector2d n);
 

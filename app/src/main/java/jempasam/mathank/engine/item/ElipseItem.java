@@ -3,7 +3,9 @@ package jempasam.mathank.engine.item;
 import jempasam.mathank.engine.containers.Box2d;
 import jempasam.mathank.engine.containers.MutableVector2d;
 import jempasam.mathank.engine.containers.Vector2d;
+import jempasam.swj.objectmanager.loader.tags.Loadable;
 
+@Loadable
 public class ElipseItem extends BaseItem {
 
     public ElipseItem(Box2d box) {

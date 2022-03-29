@@ -6,7 +6,10 @@ import java.util.List;
 
 import jempasam.mathank.engine.containers.Box2d;
 import jempasam.mathank.engine.containers.Vector2d;
+import jempasam.swj.objectmanager.loader.tags.Loadable;
+import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 
+@Loadable
 public class UnionItemGroup extends BaseItem implements  Iterable<Item>{
 
     private List<Item> items;
@@ -16,6 +19,9 @@ public class UnionItemGroup extends BaseItem implements  Iterable<Item>{
         items=new ArrayList<>();
     }
 
+    private UnionItemGroup(){super(null);}
+
+    @LoadableParameter
     public void add(Item item){
         items.add(item);
     }

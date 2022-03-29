@@ -2,9 +2,11 @@ package jempasam.mathank.engine.item;
 
 import jempasam.mathank.engine.containers.Box2d;
 import jempasam.mathank.engine.containers.Vector2d;
+import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 
 public abstract class DecoratorItem implements Item{
 
+    @LoadableParameter
     protected  Item item;
 
     public DecoratorItem(Item item) {
