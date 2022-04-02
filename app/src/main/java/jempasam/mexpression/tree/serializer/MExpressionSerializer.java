@@ -37,6 +37,15 @@ public interface MExpressionSerializer {
 		ret.register(Pattern.compile("\\("), MExpressionTerm.OPEN);
 		ret.register(Pattern.compile("\\)"), MExpressionTerm.CLOSE);
 		
+		ret.register(Pattern.compile("\\>"), MExpressionTerm.GREATER_THAN);
+		ret.register(Pattern.compile("\\<"), MExpressionTerm.LOWER_THAN);
+		ret.register(Pattern.compile("\\="), MExpressionTerm.EQUALS);
+		
+		ret.register(Pattern.compile("and"), MExpressionTerm.AND);
+		ret.register(Pattern.compile("or"), MExpressionTerm.OR);
+		
+		ret.register(Pattern.compile("!"), MExpressionTerm.NOT);
+		
 		ret.register(Pattern.compile("\\-?[1-9]+.?[1-9]*"), (str)->MExpressionTerm.of(Double.parseDouble(str)));
 		ret.register(Pattern.compile("[A-Z]"), (str)->MExpressionTerm.of(str));
 		

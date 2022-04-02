@@ -10,6 +10,12 @@ import jempasam.mexpression.tree.binary.DivideMExpression;
 import jempasam.mexpression.tree.binary.MultiplyMExpression;
 import jempasam.mexpression.tree.binary.PowerMExpression;
 import jempasam.mexpression.tree.binary.SubstractMExpression;
+import jempasam.mexpression.tree.bool.AndMExpression;
+import jempasam.mexpression.tree.bool.EqualMExpression;
+import jempasam.mexpression.tree.bool.GreaterThanMExpression;
+import jempasam.mexpression.tree.bool.LowerThanMExpression;
+import jempasam.mexpression.tree.bool.NotMExpression;
+import jempasam.mexpression.tree.bool.OrMExpression;
 import jempasam.mexpression.tree.simple.NumberMExpression;
 import jempasam.mexpression.tree.simple.ParameterMExpression;
 import jempasam.mexpression.tree.unary.AbsoluteMExpression;
@@ -115,5 +121,51 @@ public interface MExpressionTerm {
 		public int[] getArgumentsPlaces() { return new int[] {1}; }
 		public MExpression from(List<MExpression> args) { return new SquareRootMExpression(args.get(0)); }
 		public String toString() {return "square root";}
+	};
+	
+	
+	// Comparator Operator
+	public static MExpressionTerm GREATER_THAN=new MExpressionTerm() {
+		public int getPriority() { return 500; }
+		public int[] getArgumentsPlaces() { return new int[] {-1,1}; }
+		public MExpression from(List<MExpression> args) { return new GreaterThanMExpression(args.get(0),args.get(1)); }
+		public String toString() {return "greater than";}
+	};
+	
+	public static MExpressionTerm LOWER_THAN=new MExpressionTerm() {
+		public int getPriority() { return 500; }
+		public int[] getArgumentsPlaces() { return new int[] {-1,1}; }
+		public MExpression from(List<MExpression> args) { return new LowerThanMExpression(args.get(0),args.get(1)); }
+		public String toString() {return "lower than";}
+	};
+	
+	public static MExpressionTerm EQUALS=new MExpressionTerm() {
+		public int getPriority() { return 500; }
+		public int[] getArgumentsPlaces() { return new int[] {-1,1}; }
+		public MExpression from(List<MExpression> args) { return new EqualMExpression(args.get(0),args.get(1)); }
+		public String toString() {return "equal";}
+	};
+	
+	
+	// Boolean Operator
+	public static MExpressionTerm AND=new MExpressionTerm() {
+		public int getPriority() { return 300; }
+		public int[] getArgumentsPlaces() { return new int[] {-1,1}; }
+		public MExpression from(List<MExpression> args) { return new AndMExpression(args.get(0),args.get(1)); }
+		public String toString() {return "and";}
+	};
+	
+	public static MExpressionTerm OR=new MExpressionTerm() {
+		public int getPriority() { return 200; }
+		public int[] getArgumentsPlaces() { return new int[] {-1,1}; }
+		public MExpression from(List<MExpression> args) { return new OrMExpression(args.get(0),args.get(1)); }
+		public String toString() {return "or";}
+	};
+	
+	public static MExpressionTerm NOT=new MExpressionTerm() {
+		public int getPriority() { return 400; }
+		public int[] getArgumentsPlaces() { return new int[] {1}; }
+		public MExpression from(List<MExpression> args) { return new NotMExpression(args.get(0)); }
+		public String toString() {return "not";}
 	};
 }

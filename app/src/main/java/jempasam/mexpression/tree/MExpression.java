@@ -27,7 +27,7 @@ public interface MExpression {
 			List<String> s=new ArrayList<>();
 			while(tokenizer.hasNext())s.add(tokenizer.next());
 			String str[]=s.toArray(new String[0]);*/
-			String str[]=new String[] {"2","*","(","X","+","5",")"};
+			String str[]=new String[] {"2","*","(","X","+","5",")",">","20","or","1"};
 			
 			System.out.println("Tokens: "+Arrays.toString(str));
 			
