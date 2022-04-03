@@ -35,6 +35,10 @@ public class PhysicManager implements Runnable{
         }
     }
 
+    public void unregister(Item item){
+        registries.put(item,new ArrayList<>());
+    }
+
     public void tick(Item item){
         List<PhysicRegistrement> actions=registries.get(item);
         for(PhysicRegistrement pr : actions){

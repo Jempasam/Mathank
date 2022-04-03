@@ -47,4 +47,15 @@ public abstract class DecoratorItem implements Item{
     public boolean doCollide(Vector2d point) {
         return item.doCollide(point);
     }
+
+    public DecoratorItem clone() throws CloneNotSupportedException {
+        DecoratorItem ret=(DecoratorItem)super.clone();
+        ret.item=item.clone();
+        return ret;
+    }
+
+    @Override
+    public String toString() {
+        return "Mirror{"+item+"}";
+    }
 }

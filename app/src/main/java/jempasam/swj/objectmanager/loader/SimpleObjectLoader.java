@@ -33,6 +33,7 @@ public class SimpleObjectLoader<T> extends ObjectLoader<T>{
 	
 	@Override
 	protected void interpret(ObjectChunk data) {
+		System.out.println("Interpret: "+data);
 		for(DataChunk d : data) {
 			logger.enter(data.getName());
 			if(d instanceof ObjectChunk) {

@@ -1,6 +1,0 @@
->
-<classic type=ItemGroup; box="300 500 150 75">
-    <add type=SquareItem; box="30 0 60 30"/>
-    <add type=SquareItem; box="90 7 45 15"/>
-    <add type=SquareItem; box="0 30 150 45"/>
-</>

@@ -3,9 +3,13 @@ package jempasam.mathank.engine.physic;
 import jempasam.mathank.engine.containers.MutableVector2d;
 import jempasam.mathank.engine.containers.Vector2d;
 import jempasam.mathank.engine.item.Item;
+import jempasam.swj.objectmanager.loader.tags.Loadable;
+import jempasam.swj.objectmanager.loader.tags.LoadableParameter;
 
+@Loadable
 public class SlideGravityPAction implements  PhysicAction{
 
+    @LoadableParameter
     private int fallspeed;
 
     public SlideGravityPAction(int fallspeed){
@@ -40,4 +44,7 @@ public class SlideGravityPAction implements  PhysicAction{
     public void setFallspeed(int fallspeed) {
         this.fallspeed = fallspeed;
     }
+
+    /* LOADABLE */
+    private SlideGravityPAction(){ }
 }

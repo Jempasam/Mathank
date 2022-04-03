@@ -7,7 +7,7 @@ import jempasam.mexpression.tree.MExpression;
 public class DivideMExpression extends BinaryMExpression {
 
 	public DivideMExpression(MExpression a, MExpression b) {
-		super(a, b, "÷");
+		super(a, b, "Ã·");
 	}
 	
 	@Override

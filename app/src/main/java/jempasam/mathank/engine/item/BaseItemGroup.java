@@ -61,4 +61,11 @@ public abstract class BaseItemGroup extends BaseItem implements  Iterable<Item>{
         basesize=getSize();
         System.out.println("TEST");
     }
+
+    public BaseItemGroup clone() throws CloneNotSupportedException {
+        BaseItemGroup ret=(BaseItemGroup)super.clone();
+        ret.items=new ArrayList<>(items);
+        ret.basesize=new MutableVector2d(basesize);
+        return ret;
+    }
 }

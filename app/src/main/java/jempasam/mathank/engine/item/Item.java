@@ -4,7 +4,7 @@ import jempasam.mathank.engine.containers.Box2d;
 import jempasam.mathank.engine.containers.Vector2d;
 
 
-public interface Item {
+public interface Item extends Cloneable{
 
     public static Class<?> defaultSubclass(){ return ItemGroup.class; }
 
@@ -18,4 +18,6 @@ public interface Item {
     void setBox(Box2d box);
 
     boolean doCollide(Vector2d point);
+
+    public Item clone() throws CloneNotSupportedException;
 }

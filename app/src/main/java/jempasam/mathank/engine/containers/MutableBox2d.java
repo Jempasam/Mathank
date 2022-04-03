@@ -16,8 +16,8 @@ public class MutableBox2d implements Box2d{
     }
 
     public MutableBox2d(Vector2d pos, Vector2d size){
-        position=pos;
-        size=size;
+        this.position=pos;
+        this.size=size;
     }
 
     public MutableBox2d(Box2d copied){
@@ -44,4 +44,8 @@ public class MutableBox2d implements Box2d{
         size=v;
     }
 
+    @Override
+    public String toString() {
+        return "["+position+";"+size+"]";
+    }
 }

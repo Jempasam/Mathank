@@ -1,10 +1,10 @@
 [
   {
-    "title": "Test",
-    "desc": "Test 1 c'est un test"
+    "title": "Utilisation du JSON",
+    "desc": "Le texte de cette aide est téléchargée depuis un json."
   },
   {
-    "title": "Test2",
+    "title": "Jeu non terminé",
     "desc": "Lorem ipsum tarte ta tum tum tatatum tum tata"
   },
   {

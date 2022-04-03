@@ -1,7 +1,28 @@
 >
-<classic type=ItemGroup; box="0 0 2000 1000">
+<colline type=ItemGroup; box="0 0 2000 1000">
     <add type=ElipseItem; box="-500 500 1000 1000"/>
     <add type=ElipseItem; box="100 600 800 800"/>
     <add type=ElipseItem; box="850 800 400 400"/>
     <add type=ElipseItem; box="1000 500 1500 1500"/>
+</>
+<exp type=ItemGroup; box="0 0 2000 1000">
+    <add type=MExpressionItem; box="0 0 2000 1000"; expression="Y>1000-X*X/3500"/>
+</>
+
+<tank1 type=ItemGroup; box="0 0 150 75">
+    <add type=SquareItem; box="30 0 60 30"/>
+    <add type=SquareItem; box="90 7 45 15"/>
+    <add type=SquareItem; box="0 30 150 45"/>
+</>
+
+<tank2 type=MirrorItem>
+    <item type=ItemGroup; box="0 0 150 75">
+        <add type=SquareItem; box="30 0 60 30"/>
+        <add type=SquareItem; box="90 7 45 15"/>
+        <add type=SquareItem; box="0 30 150 45"/>
+    </>
+</>
+
+<shot type=ItemGroup; box="0 0 50 50">
+    <add type=ElipseItem; box="0 0 50 50"/>
 </>

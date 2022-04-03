@@ -1,0 +1,34 @@
+"battle":{
+    title: "Battle",
+    key: 6 10 2 5 ^ + - * * X X /,
+    object: {
+        environnemental: true,
+        body: "colline",
+        paint: "default_field",
+        position: "0 0",
+        id: "field"
+    },
+    object: {
+        environnemental: true,
+        body: "tank1",
+        paint: "default_player1",
+        position: "50 0",
+        id: "player1",
+        physic: { action: "gravity" }
+    },
+     object: {
+          environnemental: true,
+          body: "tank2",
+          paint: "default_player2",
+          position: "1800 0",
+          id: "player2",
+          physic: { action: "gravity" }
+     },
+     object: {
+        environnemental: false,
+        body: "shot",
+        paint: "default_player2",
+        position: "0 0",
+        id: "shot"
+     }
+}

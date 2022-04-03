@@ -38,4 +38,15 @@ public abstract class BaseItem implements Item{
     public void setBox(Box2d box) {
         this.box=new MutableBox2d(box);
     }
+
+    public BaseItem clone() throws CloneNotSupportedException {
+        BaseItem ret=(BaseItem)super.clone();
+        ret.box=new MutableBox2d(box);
+        return ret;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName()+box;
+    }
 }

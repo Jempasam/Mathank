@@ -1,6 +1,9 @@
 package jempasam.mathank.app.game.ingame;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,20 +27,54 @@ public class InGameInfos {
 
     protected GameInfos infos;
     protected PhysicManager physic;
-    protected Item environnement;
+    protected ItemGroup environnement;
     protected List<Item> items;
     protected List<InGameEvent> events;
     protected int gametime;
     protected DrawableItemList display;
 
+    protected Map<String,Item> nameds;
+
     protected InGameInfos(GameInfos infos) {
         this.infos=infos;
         this.items=new ArrayList<>();
         this.events=new ArrayList<>();
+        this.nameds=new HashMap<>();
         this.gametime=0;
     }
 
-    public static void startGame(GameInfos infos, int precision){
+    public void addItem(Item item){
+        items.add(item);
+        environnement.add(item);
+    }
+
+    public boolean removeItem(Item item){
+        environnement.remove(item);
+        physic.unregister(item);
+        return items.remove(item);
+    }
+
+    public PhysicManager physic(){
+        return physic;
+    }
+
+    public Item getEnvironnement() {
+        return environnement;
+    }
+
+    public Collection<Item> getItems() {
+        return items;
+    }
+
+    public GameInfos infos() { return infos; }
+
+    public Item getFromId(String id){
+        return nameds.get(id);
+    }
+
+    public Drawable display(){ return display; }
+
+    public static InGameInfos startGame(GameInfos infos, int precision){
         InGameInfos game=new InGameInfos(infos);
         Vector2d view=new MutableVector2d(0,0);
 
@@ -45,7 +82,10 @@ public class InGameInfos {
 
         // Setup Items And Environnement
         for(GameObject go : infos.getObjects()){
+            System.out.println(go);
+            go.getBody().setPos(go.getPosition());
             game.items.add(go.getBody());
+            game.nameds.put(go.getId(),go.getBody());
             paints.put(go.getBody(),go.getPaint());
             if(go.isEnvironnemental()){
                 view.setX(Math.max(view.getX(),go.getBody().getSize().getX()+go.getBody().getPos().getX()));
@@ -53,13 +93,13 @@ public class InGameInfos {
             }
         }
 
-        ItemGroup env=new ItemGroup(new MutableBox2d(new MutableVector2d(0,0),view));
+        game.environnement=new ItemGroup(new MutableBox2d(new MutableVector2d(0,0),view));
         for(GameObject go : infos.getObjects()){
             if(go.isEnvironnemental()) {
-                env.add(go.getBody());
+                game.environnement.add(go.getBody());
             }
         }
-        game.environnement=env;
+        System.out.println(game.environnement);
 
         // Setup Physic
         game.physic=new PhysicManager(game.environnement);
@@ -76,5 +116,21 @@ public class InGameInfos {
         for(GameEvent ge : infos.getEvents()) {
             game.events.add(InGameEvent.fromTimestamp(ge,0));
         }
+        return game;
+    }
+
+    public void tick(){
+        gametime++;
+        for(InGameEvent event :events){
+            if(gametime>event.getTimestamp()){
+                if(!event.getEvent().tick(this)){
+                    events.remove(event);
+                }
+                else{
+                    event.setTimestamp(gametime+event.getEvent().getDelay());
+                }
+            }
+        }
+        physic.tickAll();
     }
 }

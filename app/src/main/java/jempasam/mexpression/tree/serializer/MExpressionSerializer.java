@@ -46,7 +46,7 @@ public interface MExpressionSerializer {
 		
 		ret.register(Pattern.compile("!"), MExpressionTerm.NOT);
 		
-		ret.register(Pattern.compile("\\-?[1-9]+.?[1-9]*"), (str)->MExpressionTerm.of(Double.parseDouble(str)));
+		ret.register(Pattern.compile("\\-?[0-9]+.?[0-9]*"), (str)->MExpressionTerm.of(Double.parseDouble(str)));
 		ret.register(Pattern.compile("[A-Z]"), (str)->MExpressionTerm.of(str));
 		
 		return ret;

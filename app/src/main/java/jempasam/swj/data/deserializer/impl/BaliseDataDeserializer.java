@@ -149,6 +149,7 @@ public class BaliseDataDeserializer implements DataDeserializer{
 					if(!permissive)logger.log("Miss a closingBaliseToken after endBaliseToken in opening balise");
 					input.backward();
 				}
+				break;
 			}
 			else {
 				input.backward();

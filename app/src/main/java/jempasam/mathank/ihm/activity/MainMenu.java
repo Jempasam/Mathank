@@ -24,6 +24,14 @@ public class MainMenu extends AppCompatActivity {
         Button bHelp=(Button)findViewById(R.id.help);
         Button bSettings=(Button)findViewById(R.id.settings);
 
+        bBattle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         bHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

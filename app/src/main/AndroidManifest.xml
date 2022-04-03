@@ -26,6 +26,12 @@
             android:label="@string/help"
             android:theme="@style/Theme.Mathank.NoActionBar">
         </activity>
+        <activity
+            android:name="jempasam.mathank.ihm.activity.MainActivity"
+            android:exported="true"
+            android:label="@string/ingame"
+            android:theme="@style/Theme.Mathank.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

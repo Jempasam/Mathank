@@ -1,4 +1,4 @@
 >
 <default_field type=BitmapPaintBucket; bitmap="grass"/>
-<default_player1 type=TilePaintBucket; color=959595 8e93a3; squareNumber=20/>
-<default_player2 type=TilePaintBucket; color=959595 a48888; squareNumber=20/>
+<default_player1 type=TilePaintBucket; color=959595 4287f5; squareNumber=20/>
+<default_player2 type=TilePaintBucket; color=959595 f54242; squareNumber=20/>

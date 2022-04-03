@@ -38,5 +38,8 @@ public class MutableVector2d implements Vector2d {
         this.y=y;
     }
 
-
+    @Override
+    public String toString() {
+        return "("+x+";"+y+")";
+    }
 }

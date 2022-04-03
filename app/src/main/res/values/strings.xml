@@ -15,4 +15,5 @@
     <string name="battle">Affrontement</string>
     <string name="title">Mathanks</string>
     <string name="globalfont">monospace</string>
+    <string name="ingame">En Partie</string>
 </resources>
