@@ -14,7 +14,7 @@ import jempasam.swj.textanalyzis.tokenizer.impl.InputStreamSimpleTokenizer;
 public class MExpressionUtils {
     public static MExpression parse(String str) throws MExpressionBuilder.MExpressionBuilderException, MExpressionSerializer.MExpressionSerializerException {
         // STR -> TOKENS
-        Tokenizer tokenizer = new InputStreamSimpleTokenizer(new ByteArrayInputStream(str.getBytes()), " ", "+-*/^!|=><", "");
+        Tokenizer tokenizer = new InputStreamSimpleTokenizer(new ByteArrayInputStream(str.getBytes()), " ", "+-*/^!|=><()", "");
         List<String> tokens = new ArrayList<>();
         while (tokenizer.hasNext()) tokens.add(tokenizer.next());
 

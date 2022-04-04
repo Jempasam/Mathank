@@ -105,9 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         for(String k : game.infos().getKeys())keyboard.addKey(k);
                         manager.unregister(target);
                         if(player1.doCollide(target.getBox().center())||player2.doCollide(target.getBox().center())){
-                            Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                            startActivity(sendIntent);
-                            //finish();
+                            finish();
                         }
                     }
                 });

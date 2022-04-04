@@ -5,6 +5,18 @@
     <add type=ElipseItem; box="850 800 400 400"/>
     <add type=ElipseItem; box="1000 500 1500 1500"/>
 </>
+
+<polynome type=ItemGroup; box="0 0 2000 1000">
+    <add type=MExpressionItem; box="0 0 2000 1000"; expression="Y>(X-1000)^2/2000+500 or Y<(X-1000)^2/4000 or Y>700"/>
+</>
+
+<hard type=ItemGroup; box="0 0 2000 1000">
+    <add type=MExpressionItem; box="0 0 2000 1000"; expression="Y>800-X+(X/30)^2-(X/145)^3"/>
+    <add type=MExpressionItem; box="0 0 2000 1000"; expression="Y<500-X+(X/30)^2-(X/145)^3"/>
+    <add type=SquareItem; box="0 650 300 1000"/>
+    <add type=ElipseItem; box="990 420 100 100"/>
+</>
+
 <exp type=ItemGroup; box="0 0 2000 1000">
     <add type=MExpressionItem; box="0 0 2000 1000"; expression="Y>1000-X*X/3500"/>
 </>

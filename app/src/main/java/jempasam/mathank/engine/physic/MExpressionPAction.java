@@ -24,7 +24,8 @@ public class MExpressionPAction implements PhysicAction{
             parameters.put(str,0d);
         }
         this.initialx=target.getPos().getX();
-        this.initialy=target.getPos().getY();
+        parameters.put("X",0d);
+        this.initialy=target.getPos().getY()-(int)(expression.get(parameters));
     }
 
     @Override
